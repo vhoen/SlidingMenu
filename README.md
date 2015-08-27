@@ -1,17 +1,22 @@
 # Sliding Menu
 
 ## Install
-Put library in the project root, in a folder named slidingmenu.
 
-Add the following in settings.gradle
+Add the following in build.gradle
 ```
-include ':slidingmenu'
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
 ```
 
 Add the following in app/build.gradle
 ```
-dependencies {
-    compile project(':slidingmenu');
+android {
+    dependencies {
+        compile 'com.github.vhoen:SlidingMenu:1.0.10'
+    }
 }
 ```
 
