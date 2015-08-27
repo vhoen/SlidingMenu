@@ -1,4 +1,15 @@
+apply plugin: 'com.android.library'
 apply plugin: 'maven'
+
+buildscript {
+    repositories {
+        mavenCentral() // or jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
 
 group = 'com.github.vhoen'
 
