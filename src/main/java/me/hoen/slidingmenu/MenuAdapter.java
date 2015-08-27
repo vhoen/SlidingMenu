@@ -40,7 +40,6 @@ public class MenuAdapter extends ArrayAdapter<MenuItem> {
 
             viewHolder = new ViewHolder();
 
-            viewHolder.iconIv = (ImageView) rowView.findViewById(R.id.sliding_menu_icon);
             viewHolder.labelTv = (TextView) rowView.findViewById(R.id.sliding_menu_label);
 
             rowView.setTag(viewHolder);
@@ -52,7 +51,12 @@ public class MenuAdapter extends ArrayAdapter<MenuItem> {
 
         int iconResId = item.getIconResId();
         if(iconResId != 0){
-            viewHolder.iconIv.setImageResource(iconResId);
+            viewHolder.labelTv.setCompoundDrawablesWithIntrinsicBounds
+                    (context.getResources().getDrawable
+                            (iconResId),
+                    null,
+                    null,
+                    null);
         }
         viewHolder.labelTv.setText(item.getLabel());
 
@@ -61,6 +65,5 @@ public class MenuAdapter extends ArrayAdapter<MenuItem> {
 
     static class ViewHolder {
         TextView labelTv;
-        ImageView iconIv;
     }
 }

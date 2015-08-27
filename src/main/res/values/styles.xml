@@ -7,6 +7,6 @@
     </style>
 
     <style name="sliding_menu_item">
-        <item name="android:background">#FFFFFF</item>
+        <item name="android:background">#CC014101</item>
     </style>
 </resources>

@@ -34,6 +34,7 @@ Then, the activity must implement three methods :
  * This is called when the menu home button is pressed.
  * 
  */
+@Override
 protected void goHome() {
     //do something, such as open home fragment, or do nothing.
 }
@@ -41,6 +42,7 @@ protected void goHome() {
 /**
  * Returns an arraylist that will be used to display the side menu
  */
+@Override
 protected ArrayList<me.hoen.slidingmenu.MenuItem> getSlidingMenuItems(){
     final ArrayList<MenuItem> list = new ArrayList<>();
 
@@ -52,6 +54,7 @@ protected ArrayList<me.hoen.slidingmenu.MenuItem> getSlidingMenuItems(){
 /**
  * Will be called when a menu item is pressed
  */
+@Override
 protected void onSideMenuClick(me.hoen.slidingmenu.MenuItem item){
     if(item.getLabel().equals(getString(R.string.first_menu_item))){
         //perform something, such as open a new fragment

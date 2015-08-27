@@ -45,8 +45,14 @@ abstract public class BaseActivity extends FragmentActivity {
     }
 
     abstract protected void goHome();
-    abstract protected ArrayList<MenuItem>getSlidingMenuItems();
+
+    abstract protected ArrayList<MenuItem> getSlidingMenuItems();
+
     abstract protected void onSideMenuClick(MenuItem item);
+
+    protected SlidingPaneLayout getSlideMenu() {
+        return sp;
+    }
 
     private void initMenu() {
         ListView menuLv = (ListView) findViewById(R.id.left_navi_listview);
@@ -64,7 +70,7 @@ abstract public class BaseActivity extends FragmentActivity {
 
                 onSideMenuClick(item);
 
-                if(sp.closeAfterItemSelection()) {
+                if (sp.closeAfterItemSelection() == true) {
                     sp.closePane();
                 }
             }
@@ -78,7 +84,7 @@ abstract public class BaseActivity extends FragmentActivity {
             public void onClick(View v) {
                 goHome();
 
-                if(sp.closeAfterItemSelection()) {
+                if (sp.closeAfterItemSelection()) {
                     sp.closePane();
                 }
             }
