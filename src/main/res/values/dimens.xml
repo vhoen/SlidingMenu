@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ds90">40dp</dimen>
+    <dimen name="ds20">9dp</dimen>
+    <dimen name="navigation_bar_height">45dp</dimen>
+    <dimen name="navigation_bar_titleimage">33dp</dimen>
+    <dimen name="navigation_bar_titleimage_marginleft">10dp</dimen>
+    <dimen name="nabigation_bar_viewpager_height">413dp</dimen>
+    <dimen name="menu_head_image">66.67dp</dimen>
+</resources>
