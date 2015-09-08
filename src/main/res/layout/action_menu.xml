@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/sliding_menu_label"
+        style="@style/sliding_menu_item_label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"

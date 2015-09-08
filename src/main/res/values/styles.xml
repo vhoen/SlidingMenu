@@ -9,4 +9,8 @@
     <style name="sliding_menu_item">
         <item name="android:background">#CC014101</item>
     </style>
+
+    <style name="sliding_menu_item_label">
+        <item name="android:layout_margin">10dp</item>
+    </style>
 </resources>
