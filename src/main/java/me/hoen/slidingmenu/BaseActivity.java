@@ -2,7 +2,9 @@ package me.hoen.slidingmenu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-abstract public class BaseActivity extends FragmentActivity {
+abstract public class BaseActivity extends AppCompatActivity {
     static final int REQUEST_CODE_RECOVER_PLAY_SERVICES = 1001;
 
     private SlidingPaneLayout sp;
@@ -22,6 +24,15 @@ abstract public class BaseActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         sp = (SlidingPaneLayout) findViewById(R.id.slidingpanel);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(ContextCompat
+                    .getDrawable(this, R.mipmap.ic_launcher));
+
+            getSupportActionBar().setTitle("");
+            getSupportActionBar().setSubtitle("");
+        }
 
         initOnclick();
         initMenu();
@@ -70,11 +81,20 @@ abstract public class BaseActivity extends FragmentActivity {
 
                 onSideMenuClick(item);
 
-                if (sp.closeAfterItemSelection() == true) {
+                if (sp.closeAfterItemSelection()) {
                     sp.closePane();
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Log.d("me.example", "goHome");
+            sp.openPane();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     protected void initOnclick() {
@@ -87,15 +107,6 @@ abstract public class BaseActivity extends FragmentActivity {
                 if (sp.closeAfterItemSelection()) {
                     sp.closePane();
                 }
-            }
-        });
-
-        ImageView menuOpenerIv = (ImageView) findViewById(R.id
-                .slide_menu_opener);
-        menuOpenerIv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sp.openPane();
             }
         });
     }

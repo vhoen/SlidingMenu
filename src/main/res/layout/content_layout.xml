@@ -5,9 +5,9 @@
               android:background="#ffffff"
               android:orientation="vertical">
 
-    <include
-        android:id="@+id/navigation_bar"
-        layout="@layout/navigation_bar"/>
+    <!--<include-->
+        <!--android:id="@+id/navigation_bar"-->
+        <!--layout="@layout/navigation_bar"/>-->
 
     <FrameLayout
         android:id="@+id/content_frame"
