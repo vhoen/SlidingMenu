@@ -17,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/slide_menu_home"
-                android:layout_width="@dimen/menu_head_image"
-                android:layout_height="@dimen/menu_head_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/ic_launcher" />
         </FrameLayout>

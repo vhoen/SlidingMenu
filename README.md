@@ -15,7 +15,7 @@ Add the following in app/build.gradle
 ```
 android {
     dependencies {
-        compile 'com.github.vhoen:SlidingMenu:1.0.10'
+        compile 'com.github.vhoen:SlidingMenu:1.0.14'
     }
 }
 ```
